@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
             val myIntent = Intent(this, ThirdActivity::class.java)
             myIntent.putExtra("input", content)
+            myIntent.putExtra("number", 10)
             startActivity(myIntent)
 
         }
