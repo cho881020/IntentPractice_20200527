@@ -9,13 +9,15 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    val REQ_FOR_MESSAGE = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         goToFourthBtn.setOnClickListener {
             val myIntent = Intent(this, FourthActivity::class.java)
-            startActivityForResult(myIntent, 1000)
+            startActivityForResult(myIntent, REQ_FOR_MESSAGE)
         }
 
         goToSecondBtn.setOnClickListener {
@@ -48,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
         Log.d("액티비티복귀", "결과를 가지고 돌아옴")
 
-        if (requestCode == 1000) {
+        if (requestCode == REQ_FOR_MESSAGE) {
             if (resultCode == Activity.RESULT_OK) {
                 val message = data?.getStringExtra("message")
 
