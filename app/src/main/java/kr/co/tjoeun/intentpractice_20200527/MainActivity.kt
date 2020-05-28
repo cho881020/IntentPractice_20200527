@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
         goToFourthBtn.setOnClickListener {
             val myIntent = Intent(this, FourthActivity::class.java)
-            startActivity(myIntent)
+            startActivityForResult(myIntent, 1000)
         }
 
         goToSecondBtn.setOnClickListener {
