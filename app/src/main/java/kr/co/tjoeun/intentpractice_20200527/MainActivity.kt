@@ -1,8 +1,10 @@
 package kr.co.tjoeun.intentpractice_20200527
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,4 +42,21 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        Log.d("액티비티복귀", "결과를 가지고 돌아옴")
+
+        if (requestCode == 1000) {
+            if (resultCode == Activity.RESULT_OK) {
+                val message = data?.getStringExtra("message")
+
+                resultTxt.text = message
+
+            }
+        }
+
+    }
+
 }
