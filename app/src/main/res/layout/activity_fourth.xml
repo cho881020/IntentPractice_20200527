@@ -10,11 +10,13 @@
     tools:context=".FourthActivity">
 
     <EditText
+        android:id="@+id/goBackMessageEdt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="메인에 돌려보낼 값" />
 
     <Button
+        android:id="@+id/goBackBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="입력 완료" />
